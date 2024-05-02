@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "dgSpecHash": "Hkp+7FDuysHkmufnTmzs1Zs5Bro/GTOpeA9WvjtKfpyQycDA6sdLn4YBiKxkr94T/J2PVfy38T53h3MLkXmqTA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Kapa\\source\\repos\\balanceSimple\\balanceSimple\\balanceSimple.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Kapa\\.nuget\\packages\\alglib.net\\3.19.0\\alglib.net.3.19.0.nupkg.sha512",
+    "C:\\Users\\Kapa\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
+    "C:\\Users\\Kapa\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\Kapa\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.19.4\\microsoft.visualstudio.azure.containers.tools.targets.1.19.4.nupkg.sha512",
+    "C:\\Users\\Kapa\\.nuget\\packages\\swashbuckle.aspnetcore\\6.5.0\\swashbuckle.aspnetcore.6.5.0.nupkg.sha512",
+    "C:\\Users\\Kapa\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.5.0\\swashbuckle.aspnetcore.swagger.6.5.0.nupkg.sha512",
+    "C:\\Users\\Kapa\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.5.0\\swashbuckle.aspnetcore.swaggergen.6.5.0.nupkg.sha512",
+    "C:\\Users\\Kapa\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.5.0\\swashbuckle.aspnetcore.swaggerui.6.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}
