@@ -7,7 +7,7 @@ using System;
 namespace balanceSimple.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class BalanceController : ControllerBase
     {
         private ICalculatorService _calculatorService;
