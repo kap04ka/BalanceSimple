@@ -1,5 +1,6 @@
 ﻿using balanceSimple.Calculators;
 using balanceSimple.Models;
+using System.ComponentModel.DataAnnotations;
 
 namespace balanceSimple.Services
 {
@@ -7,6 +8,7 @@ namespace balanceSimple.Services
     {
         public BalanceOutput Calculate(BalanceInput balanceInput)
         {
+            if (balanceInput.flows.Count == 0) throw new ValidationException();
             // Экземпляр класса калькулятор для вычислений
             ICalculator calculator = new Calculator();
 
@@ -16,7 +18,6 @@ namespace balanceSimple.Services
             // Переменные для имен и начальных значений потока
             List<string> names = new List<string>();
             List<double> startResults = new List<double>();
-
 
             // Количество итераций
             int iterCount = 2000;

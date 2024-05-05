@@ -17,7 +17,6 @@ namespace balanceSimple
 
             builder.Services.AddTransient<ICalculatorService, CalculatorService>();
 
-
             // Configure the HTTP request pipeline.
             var app = builder.Build();
 
