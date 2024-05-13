@@ -20,9 +20,18 @@ namespace balanceSimple.Controllers
 
         [EnableCors]
         [HttpPost]
-        public BalanceOutput balanceCalculate(BalanceInput inputFlows)
+        public ActionResult balanceCalculate(BalanceInput inputFlows)
         {
-            return _calculatorService.Calculate(inputFlows);
+            try
+            {
+                var resultData = _calculatorService.Calculate(inputFlows);
+                return Ok(resultData);
+            }
+
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
     }
 }

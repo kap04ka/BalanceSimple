@@ -1,6 +1,7 @@
 ﻿using balanceSimple.Controllers;
 using balanceSimple.Models;
 using balanceSimple.Services;
+using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel.DataAnnotations;
 
 
@@ -49,7 +50,8 @@ namespace balanceSimple.Tests
             ICalculatorService calculatorService = new CalculatorService();
             var conroller = new BalanceController(calculatorService);
 
-            Assert.Throws<ValidationException>(() => conroller.balanceCalculate(data));
+            var response = conroller.balanceCalculate(data);
+            Assert.Equal(400, (response as ObjectResult)?.StatusCode);
         }
 
         [Fact]

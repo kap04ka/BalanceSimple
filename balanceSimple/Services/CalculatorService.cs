@@ -42,7 +42,7 @@ namespace balanceSimple.Services
             {
                 if (flow.LowerBound > flow.UpperBound) throw new ValidationException($"Message: Upper bound less then lower bound in flow {i + 1}!");
                 if (flow.Id != i) throw new ValidationException($"Message: Flow {i + 1} is missing!");
-                if (flow.Value < 0 || flow.Tols < 0) throw new ValidationException($"Message: Id, value or tols are incorrect in {i + 1} flow");
+                if (flow.Value < 0 || flow.Tols < 0) throw new ValidationException($"Message: Value or tols are incorrect in {i + 1} flow");
                 names.Add(flow.Name);
                 startResults.Add(flow.Value);
 

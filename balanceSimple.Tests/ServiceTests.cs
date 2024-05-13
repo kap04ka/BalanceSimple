@@ -1,8 +1,9 @@
 ﻿using balanceSimple.Controllers;
 using balanceSimple.Models;
 using balanceSimple.Services;
+using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel.DataAnnotations;
-
+using System.Web.Http.Results;
 
 namespace balanceSimple.Tests
 {
@@ -24,7 +25,8 @@ namespace balanceSimple.Tests
             ICalculatorService calculatorService = new CalculatorService();
             var conroller = new BalanceController(calculatorService);
 
-            Assert.Throws<ValidationException>(() => conroller.balanceCalculate(balanceInput));
+            var response = conroller.balanceCalculate(balanceInput);
+            Assert.Equal(400, (response as ObjectResult)?.StatusCode);
         }
 
         [Fact]
@@ -45,7 +47,8 @@ namespace balanceSimple.Tests
             ICalculatorService calculatorService = new CalculatorService();
             var conroller = new BalanceController(calculatorService);
 
-            Assert.Throws<ValidationException>(() => conroller.balanceCalculate(balanceInput));
+            var response = conroller.balanceCalculate(balanceInput);
+            Assert.Equal(400, (response as ObjectResult)?.StatusCode);
         }
 
         [Fact]
@@ -66,7 +69,8 @@ namespace balanceSimple.Tests
             ICalculatorService calculatorService = new CalculatorService();
             var conroller = new BalanceController(calculatorService);
 
-            Assert.Throws<ValidationException>(() => conroller.balanceCalculate(balanceInput));
+            var response = conroller.balanceCalculate(balanceInput);
+            Assert.Equal(400, (response as ObjectResult)?.StatusCode);
         }
 
         [Fact]
@@ -87,7 +91,8 @@ namespace balanceSimple.Tests
             ICalculatorService calculatorService = new CalculatorService();
             var conroller = new BalanceController(calculatorService);
 
-            Assert.Throws<ValidationException>(() => conroller.balanceCalculate(balanceInput));
+            var response = conroller.balanceCalculate(balanceInput);
+            Assert.Equal(400, (response as ObjectResult)?.StatusCode);
         }
     }
 }
