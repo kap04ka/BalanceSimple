@@ -1,6 +1,10 @@
 ﻿using balanceSimple.Calculators;
 using balanceSimple.Models;
+using Microsoft.AspNetCore.Http;
 using System.ComponentModel.DataAnnotations;
+using System.Net;
+using System.Net.Http;
+using System.Web.Http;
 
 namespace balanceSimple.Services
 {
@@ -8,7 +12,9 @@ namespace balanceSimple.Services
     {
         public BalanceOutput Calculate(BalanceInput balanceInput)
         {
-            if (balanceInput.flows.Count == 0) throw new ValidationException();
+            if (balanceInput.flows.Count == 0) throw new ValidationException("Message: Flow array is empty!");
+           
+
             // Экземпляр класса калькулятор для вычислений
             ICalculator calculator = new Calculator();
 
@@ -32,11 +38,11 @@ namespace balanceSimple.Services
             int i = 0;
             int size = 0;
 
-            foreach (var flow in balanceInput.flows.OrderBy(w => w.Name))
+            foreach (var flow in balanceInput.flows.OrderBy(w => w.Id))
             {
-                int.TryParse(string.Join("", flow.Name.Where(c => char.IsDigit(c))), out i);
-                i--;
-
+                if (flow.LowerBound > flow.UpperBound) throw new ValidationException($"Message: Upper bound less then lower bound in flow {i + 1}!");
+                if (flow.Id != i) throw new ValidationException($"Message: Flow {i + 1} is missing!");
+                if (flow.Value < 0 || flow.Tols < 0) throw new ValidationException($"Message: Id, value or tols are incorrect in {i + 1} flow");
                 names.Add(flow.Name);
                 startResults.Add(flow.Value);
 
@@ -50,18 +56,17 @@ namespace balanceSimple.Services
 
                 // Узнаем размер матрицы AB
                 if (flow.DestNode > size) size = (int)flow.DestNode;
-
+                i++;
             }
 
             double[,] Ab = new double[size, balanceInput.flows.Count + 1];
+            i = 0;
             // Заполнение Ab
-            foreach (var flow in balanceInput.flows.OrderBy(w => w.Name))
+            foreach (var flow in balanceInput.flows.OrderBy(w => w.Id))
             {
-                int.TryParse(string.Join("", flow.Name.Where(c => char.IsDigit(c))), out i);
-                i--;
-
                 if (flow.SourceNode != -1) Ab[(int)flow.SourceNode - 1, i] = -1;
                 if (flow.DestNode != -1) Ab[(int)flow.DestNode - 1, i] = 1;
+                i++;
             }
 
             List<double> results = calculator.Calculate(iterCount, Ab, x0, errors, I, lb, ub);
@@ -69,8 +74,32 @@ namespace balanceSimple.Services
             outputData.FlowsNames = names;
             outputData.InitValues = startResults;
             outputData.FinalValues = results;
+            outputData.IsBalanced = checkBalanced(Ab, results);
 
             return outputData;
+        }
+
+        public bool checkBalanced(double[,] Ab, List<double> result)
+        {
+            bool isAppropriate = true;
+
+            double sum = 0;
+            for (int i = 0; i < Ab.GetLength(0); i++)
+            {
+                sum = 0;
+                for (int j = 0; j < Ab.GetLength(1) - 1; j++)
+                {
+                    sum += Ab[i, j] * result[j];
+                }
+
+                if (Math.Round(sum, 1) != 0)
+                {
+                    isAppropriate = false;
+                    break;
+                }
+            }
+
+            return isAppropriate;
         }
 
     }

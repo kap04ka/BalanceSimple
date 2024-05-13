@@ -6,6 +6,6 @@
         public List<string> FlowsNames { get; set; }
         public List<double> InitValues { get; set; }
         public List<double> FinalValues { get; set; }
-
+        public bool IsBalanced { get; set; }
     }
 }

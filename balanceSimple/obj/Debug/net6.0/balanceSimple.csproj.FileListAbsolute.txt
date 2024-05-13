@@ -31,3 +31,7 @@ C:\Users\Kapa\source\repos\balanceSimple\balanceSimple\obj\Debug\net6.0\refint\b
 C:\Users\Kapa\source\repos\balanceSimple\balanceSimple\obj\Debug\net6.0\balanceSimple.pdb
 C:\Users\Kapa\source\repos\balanceSimple\balanceSimple\obj\Debug\net6.0\balanceSimple.genruntimeconfig.cache
 C:\Users\Kapa\source\repos\balanceSimple\balanceSimple\obj\Debug\net6.0\ref\balanceSimple.dll
+C:\Users\Kapa\source\repos\balanceSimple\balanceSimple\bin\Debug\net6.0\System.Net.Http.Formatting.dll
+C:\Users\Kapa\source\repos\balanceSimple\balanceSimple\bin\Debug\net6.0\System.Web.Http.dll
+C:\Users\Kapa\source\repos\balanceSimple\balanceSimple\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\Kapa\source\repos\balanceSimple\balanceSimple\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
