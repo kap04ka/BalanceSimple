@@ -11,10 +11,12 @@ namespace balanceSimple.Controllers
     public class BalanceController : ControllerBase
     {
         private ICalculatorService _calculatorService;
+        private readonly ILogger<BalanceController> _logger;
 
-        public BalanceController(ICalculatorService calcServ)
+        public BalanceController(ICalculatorService calcServ, ILogger<BalanceController> logger)
         {
             _calculatorService = calcServ;
+            _logger = logger;
 
         }
 
@@ -22,14 +24,17 @@ namespace balanceSimple.Controllers
         [HttpPost]
         public ActionResult balanceCalculate(BalanceInput inputFlows)
         {
+            _logger.LogInformation("Обращение к balanceCalculator");
             try
             {
                 var resultData = _calculatorService.Calculate(inputFlows);
+                _logger.LogInformation("Данные обработаны успешно");
                 return Ok(resultData);
             }
 
             catch (Exception ex)
             {
+                _logger.LogError(ex, "Возникла ошибка");
                 return BadRequest(ex.Message);
             }
         }

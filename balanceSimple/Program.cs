@@ -15,22 +15,29 @@ namespace balanceSimple
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
+            builder.Logging.ClearProviders();
+            builder.Logging.AddConsole();
+            builder.Logging.AddDebug();
+
             builder.Services.AddTransient<ICalculatorService, CalculatorService>();
 
             // Configure the HTTP request pipeline.
             var app = builder.Build();
 
-            app.UseCors(builder => builder
-                  .AllowAnyOrigin()
-                  .AllowAnyMethod()
-                  .AllowAnyHeader());
-
             // Configure the HTTP request pipeline.
             app.UseSwagger();
             app.UseSwaggerUI();
 
-
+            app.UseRouting();
             app.UseAuthorization();
+            app.UseCors(builder => builder
+                 .AllowAnyOrigin()
+                 .AllowAnyMethod()
+                .AllowAnyHeader());
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllers();
+            });
 
 
             app.MapControllers();
