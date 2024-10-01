@@ -113,3 +113,5 @@ C:\Users\Kapa\source\repos\balanceSimple\balanceSimple.Tests\obj\Debug\net6.0\re
 C:\Users\Kapa\source\repos\balanceSimple\balanceSimple.Tests\bin\Debug\net6.0\System.Net.Http.Formatting.dll
 C:\Users\Kapa\source\repos\balanceSimple\balanceSimple.Tests\bin\Debug\net6.0\System.Web.Http.dll
 C:\Users\Kapa\source\repos\balanceSimple\balanceSimple.Tests\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
+C:\Users\Kapa\source\repos\balanceSimple\balanceSimple.Tests\bin\Debug\net6.0\Castle.Core.dll
+C:\Users\Kapa\source\repos\balanceSimple\balanceSimple.Tests\bin\Debug\net6.0\Moq.dll
