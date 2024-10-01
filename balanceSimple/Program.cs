@@ -19,7 +19,7 @@ namespace balanceSimple
             builder.Logging.AddConsole();
             builder.Logging.AddDebug();
 
-            builder.Services.AddTransient<ICalculatorService, CalculatorService>();
+            //builder.Services.AddTransient<ICalculatorService, CalculatorService>();
             builder.Services.AddScoped<ICalculatorService, CalculatorService>();
 
             // Configure the HTTP request pipeline.
