@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "MySZO6XprJhnV/PTEVTpeMgOko/9FFVl2tj04Uf7ccZA30HE9mXHvkClR2wVfd36ibaNGYDJsN2ylLYYNwkA3g==",
+  "dgSpecHash": "0TSqjwGIcVn0o1nG1dwxTi858lAzVwY4p+kBpMftIQ7aBA37G1kP23A2XXP1ZcKulUd2I8zkEP2momO8klzw3Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\Kapa\\source\\repos\\balanceSimple\\balanceSimple\\balanceSimple.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Kapa\\.nuget\\packages\\accord\\3.8.0\\accord.3.8.0.nupkg.sha512",
+    "C:\\Users\\Kapa\\.nuget\\packages\\accord.math\\3.8.0\\accord.math.3.8.0.nupkg.sha512",
     "C:\\Users\\Kapa\\.nuget\\packages\\alglib.net\\3.19.0\\alglib.net.3.19.0.nupkg.sha512",
     "C:\\Users\\Kapa\\.nuget\\packages\\castle.core\\5.1.1\\castle.core.5.1.1.nupkg.sha512",
     "C:\\Users\\Kapa\\.nuget\\packages\\microsoft.aspnet.webapi.client\\6.0.0\\microsoft.aspnet.webapi.client.6.0.0.nupkg.sha512",

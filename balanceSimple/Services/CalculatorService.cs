@@ -27,7 +27,8 @@ namespace balanceSimple.Services
             }
 
             // Экземпляр класса калькулятор для вычислений
-            ICalculator calculator = new Calculator();
+            ICalculator calculator = new CalculatorAccord();
+            //ICalculator calculator = new Calculator();
 
             // Эхземпляр выходых данных
             var outputData = new BalanceOutput();
